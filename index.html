@@ -81,7 +81,7 @@
             <button class="btn" id="btn-start">PIMA IQ YANJYE</button>
         </div>
 
-        <!-- SCREEN 2: VERIFICATION (Aho bahita bajya directly) -->
+        <!-- SCREEN 2: VERIFICATION -->
         <div id="scr-verify" class="screen">
             <h1>Hagarara ho gato! 🔒</h1>
             <p>Kugira ngo AI ifungure Report y'ubwenge bwawe, banza ukore ibi bikorwa 2 byoroheje:</p>
@@ -114,13 +114,11 @@
 
         let isSubscribed = false;
 
-        // Twayihinduye ngo ihite ijya ku gice cya Subscribe ako kanya kugira ngo content:// itayiblofa
         btnStart.addEventListener('click', function() {
             scrStart.classList.remove('active');
             scrVerify.classList.add('active');
         });
 
-        // Kanda Subscribe
         btnSub.addEventListener('click', function() {
             window.open('https://www.youtube.com/results?search_query=CyberMindLab87', '_blank'); 
             isSubscribed = true;
@@ -129,14 +127,13 @@
             btnShare.style.cursor = "pointer";
         });
 
-        // Kanda Share
         btnShare.addEventListener('click', function() {
             if(!isSubscribed) return;
             
-            let linkToShare = "https://kwizerjo87-cmyk.github.io/Cyber-mind-lab/";
+            let linkToShare = "Ese urashaka kumenya IQ Level yawe? Kanda hano upime: https://kwizerjo87-cmyk.github.io/Cyber-mind-lab/";
             window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(linkToShare), '_blank');
             
-            setTimeout(showFinalResults, 1000);
+            setTimeout(showFinalResults, 1500);
         });
 
         function showFinalResults() {
@@ -145,4 +142,4 @@
         }
     </script>
 </body>
-</html>
+                </html>
