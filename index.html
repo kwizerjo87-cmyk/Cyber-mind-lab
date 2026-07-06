@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMind IQ Scanner</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .box {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 420px;
+            width: 100%;
+            border: 2px solid #a855f7;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #a855f7;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #cbd5e1;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #a855f7;
+            color: #ffffff;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .btn-sub { background-color: #ef4444; }
+        .btn-share { background-color: #22c55e; }
+
+        .screen { display: none; }
+        .active { display: block; }
+
+        .reward-badge {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid #a855f7;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <!-- SCREEN 1: START -->
+        <div id="scr-start" class="screen active">
+            <h1>CyberMind IQ & Future Scanner 🔮</h1>
+            <p>Ese urashaka kumenya igipimo cy'ubwenge bwawe (IQ Level) n'umwuga AI ibona uzazindukamo mu gihe kizaza? Kanda hano upime ubu ngubu.</p>
+            <button class="btn" id="btn-start">PIMA IQ YANJYE</button>
+        </div>
+
+        <!-- SCREEN 2: VERIFICATION (Aho bahita bajya directly) -->
+        <div id="scr-verify" class="screen">
+            <h1>Hagarara ho gato! 🔒</h1>
+            <p>Kugira ngo AI ifungure Report y'ubwenge bwawe, banza ukore ibi bikorwa 2 byoroheje:</p>
+            <button class="btn btn-sub" id="btn-sub">1. Kora Subscribe kuri YouTube</button>
+            <button class="btn btn-share" id="btn-share" style="opacity: 0.5; cursor: not-allowed;" disabled>2. Sangiza Inshuti (Share)</button>
+        </div>
+
+        <!-- SCREEN 3: IBIHEMBO (RESULTS) -->
+        <div id="scr-results" class="screen">
+            <h1 style="color: #22c55e;">Scan Yarangiye! 🎉</h1>
+            <h2 style="font-size: 32px; color: #22c55e; margin: 15px 0;">IQ Score: 135 (Superior)</h2>
+            
+            <div class="reward-badge">
+                <strong style="color: #a855f7;">📋 AI IQ & Future Report:</strong><br><br>
+                • <strong>Imiterere:</strong> Ufite ubwenge bwihuta cyane mu gukora *Analysis* n'ikoranabuhanga.<br><br>
+                • <strong>Ejo Hazaza:</strong> AI yerekanye ko uzaba umuhanga mu bya *Technology, Coding*, cyangwa se *Cyber-Security*.<br><br>
+                • <strong>Inama:</strong> Komeza wige ibintu bishya buri munsi, ufite amahirwe menshi yo gutera imbere vuba!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const scrStart = document.getElementById('scr-start');
+        const scrVerify = document.getElementById('scr-verify');
+        const scrResults = document.getElementById('scr-results');
+
+        const btnStart = document.getElementById('btn-start');
+        const btnSub = document.getElementById('btn-sub');
+        const btnShare = document.getElementById('btn-share');
+
+        let isSubscribed = false;
+
+        // Twayihinduye ngo ihite ijya ku gice cya Subscribe ako kanya kugira ngo content:// itayiblofa
+        btnStart.addEventListener('click', function() {
+            scrStart.classList.remove('active');
+            scrVerify.classList.add('active');
+        });
+
+        // Kanda Subscribe
+        btnSub.addEventListener('click', function() {
+            window.open('https://www.youtube.com/results?search_query=CyberMindLab87', '_blank'); 
+            isSubscribed = true;
+            btnShare.disabled = false;
+            btnShare.style.opacity = "1";
+            btnShare.style.cursor = "pointer";
+        });
+
+        // Kanda Share
+        btnShare.addEventListener('click', function() {
+            if(!isSubscribed) return;
+            
+            let linkToShare = "https://kwizerjo87-cmyk.github.io/Cyber-mind-lab/";
+            window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(linkToShare), '_blank');
+            
+            setTimeout(showFinalResults, 1000);
+        });
+
+        function showFinalResults() {
+            scrVerify.classList.remove('active');
+            scrResults.classList.add('active');
+        }
+    </script>
+</body>
+</html>
