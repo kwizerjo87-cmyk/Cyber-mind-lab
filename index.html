@@ -25,7 +25,7 @@
             width: 100%;
             border: 2px solid #a855f7;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            margin: 0 auto; /* Ibi bihita biyishyira rwagati toka ku toka */
+            margin: 0 auto;
         }
         h1 {
             color: #a855f7;
@@ -55,7 +55,7 @@
         .btn-share { background-color: #22c55e; }
 
         .screen { display: none; }
-        .screen.active { display: block !important; } /* Bipfunda ko bigomba kwaka */
+        .screen.active { display: block !important; }
 
         .reward-badge {
             background: rgba(168, 85, 247, 0.1);
@@ -71,14 +71,12 @@
 <body>
 
     <div class="box">
-        <!-- SCREEN 1: START -->
         <div id="scr-start" class="screen active">
             <h1>CyberMind IQ & Future Scanner 🔮</h1>
             <p>Ese urashaka kumenya igipimo cy'ubwenge bwawe (IQ Level) n'umwuga AI ibona uzazindukamo mu gihe kizaza? Kanda hano upime ubu ngubu.</p>
             <button class="btn" id="btn-start">PIMA IQ YANJYE</button>
         </div>
 
-        <!-- SCREEN 2: VERIFICATION -->
         <div id="scr-verify" class="screen">
             <h1>Hagarara ho gato! 🔒</h1>
             <p>Kugira ngo AI ifungure Report y'ubwenge bwawe, banza ukore ibi bikorwa 2 byoroheje:</p>
@@ -86,7 +84,6 @@
             <button class="btn btn-share" id="btn-share" style="opacity: 0.5; cursor: not-allowed;" disabled>2. Sangiza Inshuti (Share)</button>
         </div>
 
-        <!-- SCREEN 3: IBIHEMBO (RESULTS) -->
         <div id="scr-results" class="screen">
             <h1 style="color: #22c55e;">Scan Yarangiye! 🎉</h1>
             <h2 style="font-size: 32px; color: #22c55e; margin: 15px 0;">IQ Score: 135 (Superior)</h2>
